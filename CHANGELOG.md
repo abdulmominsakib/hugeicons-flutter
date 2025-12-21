@@ -1,5 +1,41 @@
 # Changelog
 
+## [1.1.4] - 2025-01-30
+
+### Fixed
+- **Alpha Channel Support**: Icons now properly respect the alpha channel when providing colors with transparency
+  - `Colors.white.withAlpha(50)` now correctly renders semi-transparent icons
+  - Added `stroke-opacity` and `fill-opacity` SVG attributes for transparent colors
+  - Fixes issue where icons were always fully opaque regardless of color transparency
+
+---
+
+## [1.1.3] - 2025-01-30
+
+### Updated
+- **Icon Set**: Updated to latest icon set with regenerated icon data
+
+---
+
+## [1.1.2] - 2025-01-30
+
+### Fixed
+- **Flutter Compatibility**: Fixed `toARGB32()` method not found error on Flutter versions prior to 3.29.0
+  - Reverted from `.toARGB32()` to `.value` for color conversion to ensure compatibility with all Flutter versions
+  - Package now works correctly on Flutter 3.27.0 and all other supported versions
+  - Added deprecation suppression to prevent warnings on newer Flutter versions
+
+---
+
+## [1.1.1] - 2025-01-23
+
+### Fixed
+- **CupertinoDynamicColor Support**: Icons now properly adapt to light/dark mode when using `CupertinoDynamicColor` (e.g., `CupertinoColors.tertiaryLabel`)
+  - Fixed color resolution to match Flutter's built-in `Icon` and `Text` widget behavior
+  - Icons will now correctly change colors when switching between light and dark themes
+
+---
+
 ## [1.1.0] - 2025-01-22
 
 ### 🎨 Enhanced Theme Integration
